@@ -69,8 +69,21 @@ export function ChatonsExtensionsMainPanel() {
   }
 
   const handleShowLogs = async (item: ChatonsExtension) => {
+    if (Object.prototype.hasOwnProperty.call(logsById, item.id)) {
+      setLogsById((prev) => {
+        const next = { ...prev }
+        delete next[item.id]
+        return next
+      })
+      return
+    }
+
     const result = await workspaceIpc.getExtensionLogs(item.id)
-    setLogsById((prev) => ({ ...prev, [item.id]: result.content ?? '' }))
+    const content = (result.content ?? '').trim()
+    setLogsById((prev) => ({
+      ...prev,
+      [item.id]: content || t('Aucun log disponible pour cette extension.'),
+    }))
   }
 
   const handleRemove = async (item: ChatonsExtension) => {

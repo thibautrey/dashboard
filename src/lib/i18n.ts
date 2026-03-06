@@ -132,6 +132,8 @@ i18n.use(initReactI18next).init({
         "onboarding.test.noModelsInScope": "No models selected in scope.",
         "onboarding.test.setupValidated":
           "Setup validated. Models are detected and scope is active.",
+        "onboarding.test.skipWhenNoModels":
+          "No models were found yet. You can finish onboarding now and configure models later in settings.",
         "onboarding.error.cannotLoadModels": "Unable to load models.",
         "onboarding.error.cannotSaveScope": "Unable to save scope.",
         "Modèles disponibles": "Available Models",
@@ -397,6 +399,8 @@ i18n.use(initReactI18next).init({
           "Aucun modèle sélectionné dans le scope.",
         "onboarding.test.setupValidated":
           "Setup validé. Les modèles sont détectés et le scope est actif.",
+        "onboarding.test.skipWhenNoModels":
+          "Aucun modèle n'a encore été trouvé. Vous pouvez terminer l'onboarding maintenant et configurer les modèles plus tard dans les paramètres.",
         "onboarding.error.cannotLoadModels":
           "Impossible de charger les modèles.",
         "onboarding.error.cannotSaveScope":

@@ -41,6 +41,7 @@ Model discovery/source-of-truth note:
 
 - `syncPiModels` now refreshes provider model lists from internal `pi --list-models` output and writes them into `<userData>/.pi/agent/models.json` for configured providers.
 - onboarding no longer injects hardcoded model IDs when adding a provider.
+- onboarding Step 3 allows finishing setup without a successful test when no models were detected for the selected provider; in that case the UI explains that models can be configured later from settings.
 - runtime/UI model availability still reads from `models.json` via `ModelRegistry`.
 
 Auth bootstrap note:

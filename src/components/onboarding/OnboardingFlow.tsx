@@ -375,7 +375,8 @@ export function OnboardingFlow({ onFinish }: { onFinish?: () => void }) {
             </button>
             {testStatus === "success" ? <p className="ok">{testMessage}</p> : null}
             {testStatus === "error" ? <p className="error">{testMessage}</p> : null}
-            <button disabled={testStatus !== "success"} onClick={handleFinish}>
+            {models.length === 0 ? <p>{t("onboarding.test.skipWhenNoModels")}</p> : null}
+            <button disabled={models.length > 0 && testStatus !== "success"} onClick={handleFinish}>
               {t("onboarding.openChatons")}
             </button>
           </section>
