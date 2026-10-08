@@ -1,5 +1,9 @@
 # Chatons User Guide
 
+## October 8, 2026 — LLM prefix ordering
+
+The runtime keeps fixed guidance before conversation-specific behavior and access-mode context so identical model requests can reuse their prefix. Actual cache reuse is determined by the inference server.
+
 ## Audience and Scope
 This guide is for everyday Chatons users.
 

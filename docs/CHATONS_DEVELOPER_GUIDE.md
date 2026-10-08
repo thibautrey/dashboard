@@ -1,5 +1,9 @@
 # Chatons Developer Guide
 
+## October 8, 2026 — LLM prefix ordering
+
+`electron/pi-sdk-runtime.ts` assembles fixed extension, thread-action and limitation guidance before behavior/access-mode sections. It preserves the original text, tool permissions and conversation-message order; no proprietary cache options are added.
+
 ## 1. Purpose
 This guide documents the **actual technical behavior** of Chatons as implemented in the current codebase.
 

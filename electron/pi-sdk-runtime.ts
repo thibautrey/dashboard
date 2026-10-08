@@ -551,9 +551,6 @@ class PiSdkRuntime {
         sections.push(
           "If the user mentions creating or editing an extension, first read the project's extension documentation before proposing or applying changes.",
         )
-        if (behaviorPrompt) {
-          sections.push(`## Comportement par defaut\n${behaviorPrompt}`)
-        }
         sections.push(
           [
             '## Thread action suggestions tool',
@@ -566,16 +563,6 @@ class PiSdkRuntime {
         )
         sections.push(
           [
-            '## Conversation access mode',
-            `Current access mode at session start: ${accessMode}.`,
-            accessMode === 'open'
-              ? 'Open mode was enabled when this session was prepared.'
-              : 'Secure mode was enabled when this session was prepared.',
-            'If you need to confirm the current mode later, use the internal get_access_mode tool/command instead of assuming it has not changed.',
-          ].join('\n'),
-        )
-        sections.push(
-          [
             '## Secure mode limitation handling',
             'If you cannot complete a task because you do not have enough filesystem or project context, consider whether the current access mode may be the reason.',
             'When secure mode is active and that is likely the reason, clearly tell the user what you cannot access or do.',
@@ -583,6 +570,19 @@ class PiSdkRuntime {
             'Make that suggestion in the same language as the user.',
             'When helpful, use the thread action suggestions tool to offer a short action such as "Switch to open mode" in the user\'s language.',
             'Do not blame the access mode if the limitation is unrelated.',
+          ].join('\n'),
+        )
+        if (behaviorPrompt) {
+          sections.push(`## Comportement par defaut\n${behaviorPrompt}`)
+        }
+        sections.push(
+          [
+            '## Conversation access mode',
+            `Current access mode at session start: ${accessMode}.`,
+            accessMode === 'open'
+              ? 'Open mode was enabled when this session was prepared.'
+              : 'Secure mode was enabled when this session was prepared.',
+            'If you need to confirm the current mode later, use the internal get_access_mode tool/command instead of assuming it has not changed.',
           ].join('\n'),
         )
         if (accessMode === 'open') {

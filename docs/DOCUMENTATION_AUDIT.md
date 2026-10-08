@@ -1,5 +1,9 @@
 # Documentation Audit
 
+## October 8, 2026 — LLM prefix ordering
+
+Moved variable behavior and access-mode prompt sections after fixed runtime guidance. Updated both guides to document reusable prefixes and server-dependent cache behavior.
+
 ## March 6, 2026
 
 ### Thread action suggestion badges
